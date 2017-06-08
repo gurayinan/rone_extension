@@ -1,0 +1,34 @@
+{
+  "name": "Rone Insights",
+  "description": "Customize your news.",
+  "version": "1.1",
+  "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "jquery-3.2.1.min.js", "logger.js"
+    ]
+  },
+  "browser_action": {
+    "default_popup": "view.html"
+  },
+  "icons": { 
+    "16": "rone-16x16.png",
+    "128": "rone-128x128.png" 
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "activeTab",
+    "https://api.rone.io/chrome",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["jquery-3.2.1.min.js", "logger.js"]
+    }
+  ]
+}

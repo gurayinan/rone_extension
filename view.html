@@ -1,0 +1,242 @@
+<html>
+<head>
+<script src="jquery-3.2.1.min.js"></script>
+<script src="logger.js"></script>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  width:300px;
+  margin-bottom: 30px;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 30px;
+  color: #777;
+  background: #279af1;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 0;
+  position: relative;
+}
+
+.contact input[type="text"],
+.contact input[type="number"],
+.contact input[type="tel"],
+.contact input[type="url"],
+.contact textarea,
+.contact button[type="button"],
+.contact select {
+  font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+.contact {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 30px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.contact h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.contact h4 {
+  margin: 5px 0 5px;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 5px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact input[type="tel"],
+.contact input[type="url"],
+.contact textarea,
+.contact select {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+select.soflow {
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #555;
+   font-size: inherit;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 250px;
+}
+
+.contact input[type="text"]:hover,
+.contact input[type="email"]:hover,
+.contact input[type="tel"]:hover,
+.contact input[type="url"]:hover,
+.contact textarea:hover,
+.contact select:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+.contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+.contact button[type="button"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #279af1;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.contact button[type="button"]:hover {
+  background: #279af1;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.contact button[type="button"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  text-align: center;
+}
+
+.contact input:focus,
+.contact textarea:focus,
+.contact select:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <form id="rone_registered_user" class="contact" action="" method="post">
+    <h3>Rone</h3>
+    <fieldset>
+      <span id="already_registered"></span>
+    </fieldset>
+  </form>
+  <form id="rone_menu" class="contact" action="" method="post">
+    <h3>Rone</h3>
+    <h4>Click button below to open up registration form...</h4>
+    <fieldset>
+      <button name="submit" type="button" id="register_menu">Register</button>
+    </fieldset>
+  </form>
+  <form id="rone_register" class="contact" action="" method="post">
+    <h3>Rone</h3>
+    <h4>Register from the form below...</h4>
+    <fieldset>
+      <span>Age : </span>
+      <select id="age" name="age" class="soflow" required>
+        <option value = "0-20" name="0-20">0-20</option>
+        <option value = "20-40" name="20-40">20-40</option>
+        <option value = "40-60" name="40-60">40-60</option>
+        <option value = "60-80" name="60-80">60-80</option>
+        <option value = "80-100" name="80-100">80-100</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <span>Gender : </span>
+      <select id="gender" name="gender" class="soflow" required>
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <span>School Degree : </span>
+      <select id="education" name="education" class="soflow" required>
+        <option value = "highschool" name="High School">High School Degree</option>
+        <option value = "associate" name="Associate">Associate's Degree</option>
+        <option value = "bachelor" name="Bachelor">Bachelor's Degree</option>
+        <option value = "master" name="Master">Master's Degree</option>
+        <option value = "doctorate" name="Doctoral">Doctorate</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <span>Monthly Earning (TRY) : </span>
+      <select id="finance" name="finance" class="soflow" required>
+        <option value="0-1000">0-1000</option>
+        <option value="1000-3500">1000-3500</option>
+        <option value="3500-7000">3500-7000</option>
+        <option value="7000-10000">7000-10000</option>
+        <option value="10000+">10000+</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="button" id="save">Register</button>
+    </fieldset>
+    <fieldset>
+      <span id="register-info"></span>
+    </fieldset>
+  </form>
+</div>
+</body>
+</html>
